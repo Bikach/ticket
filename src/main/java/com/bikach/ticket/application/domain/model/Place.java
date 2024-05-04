@@ -1,4 +1,4 @@
 package com.bikach.ticket.application.domain.model;
 
-public record Seat(String ref) {
+public record Place(String rank, int seatNumber) {
 }

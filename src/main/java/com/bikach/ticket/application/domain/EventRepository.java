@@ -1,7 +1,7 @@
 package com.bikach.ticket.application.domain;
 
-import com.bikach.ticket.application.domain.model.Event;
+import com.bikach.ticket.application.domain.model.EventPlaceRegister;
 
 public interface EventRepository {
-    Event findAvailableSeatsByEventId(String eventId);
+    void bookPlaces(EventPlaceRegister eventPlaceRegister);
 }
