@@ -1,7 +1,7 @@
 package com.bikach.ticket.configuration;
 
 import com.bikach.ticket.application.domain.EventRepository;
-import com.bikach.ticket.application.usecase.BookPlaces;
+import com.bikach.ticket.application.usecase.EventPlaceRegister;
 import jakarta.transaction.Transactional;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,8 +11,8 @@ public class EventBean {
 
     @Bean
     @Transactional
-    public BookPlaces bookPlaces(EventRepository repository) {
-        return new BookPlaces(repository);
+    public EventPlaceRegister bookPlaces(EventRepository repository) {
+        return new EventPlaceRegister(repository);
     }
 
 }

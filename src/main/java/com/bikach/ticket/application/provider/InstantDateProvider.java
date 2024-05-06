@@ -2,12 +2,12 @@ package com.bikach.ticket.application.provider;
 
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 public class InstantDateProvider implements DateProvider {
     @Override
-    public LocalDate dateNow() {
-        return LocalDate.now();
+    public LocalDateTime dateNow() {
+        return LocalDateTime.now();
     }
 }

@@ -1,8 +1,8 @@
 package com.bikach.ticket.application.provider;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public interface DateProvider {
 
-    LocalDate dateNow();
+    LocalDateTime dateNow();
 }

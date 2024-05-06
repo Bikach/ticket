@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Builder
@@ -22,7 +22,7 @@ public class EventHistoryEntity {
     String name;
 
     @Column
-    LocalDate createdAt;
+    LocalDateTime createdAt;
 
     @Column
     String places;

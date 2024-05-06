@@ -1,7 +1,7 @@
 package com.bikach.ticket.infrastructure.repositories;
 
 import com.bikach.ticket.application.domain.EventRepository;
-import com.bikach.ticket.application.domain.model.EventPlaceRegister;
+import com.bikach.ticket.application.domain.model.Event;
 import com.bikach.ticket.application.provider.DateProvider;
 import com.bikach.ticket.infrastructure.repositories.entity.EventHistoryEntity;
 import org.springframework.stereotype.Repository;
@@ -17,16 +17,16 @@ public class PostgresJpaEventRepository implements EventRepository {
     }
 
     @Override
-    public void bookPlaces(EventPlaceRegister eventPlaceRegister) {
-        var eventEntity = mapToEventEntity(eventPlaceRegister);
+    public void bookPlaces(Event event) {
+        var eventEntity = mapToEventEntity(event);
         eventRepository.save(eventEntity);
     }
 
-    private EventHistoryEntity mapToEventEntity(EventPlaceRegister eventPlaceRegister) {
+    private EventHistoryEntity mapToEventEntity(Event event) {
         return EventHistoryEntity.builder()
-                .name(eventPlaceRegister.name())
+                .name(event.name())
                 .createdAt(dateProvider.dateNow())
-                .places(eventPlaceRegister.joinBookedPlaces())
+                .places(event.joinBookedPlaces())
                 .build();
 
     }
